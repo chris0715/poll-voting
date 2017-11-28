@@ -1,10 +1,13 @@
 const Sequelize = require('sequelize')
 const sequelize = require('../setupSequelize')(require('../config').DB)
 
- const Poll = sequelize.define('poll', {
-  title: {
+ const User = sequelize.define('user', {
+  firstName: {
+    type: Sequelize.STRING
+  },
+  lastName: {
     type: Sequelize.STRING
   }
 })
 
-module.exports = Poll
+module.exports = User

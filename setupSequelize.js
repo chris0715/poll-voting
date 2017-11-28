@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 
 let sequelize = null
 
-module.exports = (options) {
+module.exports = (options) => {
   if (!sequelize) {
     sequelize = new Sequelize(options)
   }
