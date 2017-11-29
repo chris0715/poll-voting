@@ -3,8 +3,8 @@ module.exports = {
   DB: {
     database: 'pollVoting',
     host: 'localhost',
-    username: 'postgres',
-    password:  '.infernusk23',
+    username: 'root',
+    password:  '1234',
     dialect: 'postgres',
     pool: {
       max: 10,

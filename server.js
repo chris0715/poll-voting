@@ -6,6 +6,7 @@ const models = require('./models')
 
 app.use(parser.json())
 app.set('view engine', 'ejs')
+app.use(express.static('static'))
 
 app.get('/', (req, res) => {
   res.render('index')

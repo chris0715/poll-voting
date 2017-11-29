@@ -3,10 +3,12 @@ const sequelize = require('../setupSequelize')(require('../config').DB)
 
  const User = sequelize.define('user', {
   firstName: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    allowNull: false
   },
   lastName: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    allowNull: false
   }
 })
 
