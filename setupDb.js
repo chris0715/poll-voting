@@ -5,7 +5,9 @@ async function setupDb() {
     await sequelize.sync({force: true})
     await models.User.create({
       firstName: 'marcos',
-      lastName: 'polo'
+      lastName: 'polo',
+      username: 'admin',
+      password: '1234'
     })
     .then(_ => process.exit(0))
 

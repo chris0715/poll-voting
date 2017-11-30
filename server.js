@@ -6,10 +6,11 @@ const models = require('./models')
 
 app.use(parser.json())
 app.set('view engine', 'ejs')
-app.use(express.static('static'))
+app.use(express.static('public'))
 
-app.get('/', (req, res) => {
-  res.render('index')
+app.get('/', async (req, res) => {
+  const pollList = await models.Poll.findAll()
+  res.render('index', { pollList })
 })
 
 app.get('/api/poll/list', (req, res) => {
@@ -38,6 +39,16 @@ app.post('/api/poll/option/create', (req, res) => {
   .cath((e) => {
 
   })
+})
+
+app.get('/api/user/list', async (req, res) => {
+  try {
+    const userList = await models.User.findAll()
+    res.json(userList)
+  } catch (e) {
+
+  }
+  
 })
 
 app.post('/api/user/create', (req, res) => {
